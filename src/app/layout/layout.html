@@ -1,3 +1,8 @@
-<app-header/>
- <router-outlet/>
-<app-footer/>
+<div class="main_wrapper mainPage">
+    <app-header/>
+    <router-outlet/>
+    <app-footer/>
+</div>
+@if (ui.showOverlay()) {
+    <app-overlay/>
+}

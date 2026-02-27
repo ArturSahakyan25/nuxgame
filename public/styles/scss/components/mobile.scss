@@ -1,0 +1,63 @@
+.mobileNavBtnWrapper{
+  @media (max-width: 1024px) {
+      display: block;
+  }
+  button{
+    @media (max-width: 1024px) {
+        width: 40px;
+    }
+    background: url('/img/new_menu.svg') no-repeat center;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    transition: all .3s;
+    position: relative;
+    width: 26px;
+    height: 24px;
+    &.active{
+      background: url('/img/cross_new.svg') no-repeat right;
+      transition: all .3s;
+    }
+  }
+}
+
+.overlay{
+  pointer-events: all;
+  background: rgba(232, 229, 244, .8);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.langSwitcherWrapper_mobile{
+  margin-left: auto;
+  margin-right: 24px;
+}
+.mobileMenu{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  display: block;
+  position: absolute;
+  top: 69.5px;
+  left: -1px;
+  width: calc(100% + 2px);
+  border-radius: 0 0 20px 20px;
+  background: rgba(245, 245, 247, .2);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-top: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 15px 15px 30px;
+  max-height: calc(100dvh - 55.5px);
+  overflow-y: auto;
+  transition: all .3s ease;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, .1);
+}
+.mobileMenuList{
+  padding-bottom: 14px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 25px;
+  list-style: none;
+}
