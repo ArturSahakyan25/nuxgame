@@ -9,6 +9,10 @@ export const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: '' },
       { path: '', component: HomePage },
+      {
+        path: '',
+        loadChildren: () => import('./features/products/products.routes').then((m) => m.ProductsRoutes)
+      },
     ]
   }
 ];
