@@ -1,0 +1,366 @@
+<div class="header" xmlns="http://www.w3.org/1999/html">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <a class="headerLogo" routerLink="/">
+        <svg [icon]="'logo'" viewBox="0 0 146 52" width="146" height="52"></svg>
+      </a>
+      @if (!ui.isMobile()) {
+        <nav class="headerNav">
+          <ul>
+            @for (nav of navData; track $index) {
+              <li>
+                <button
+                  (click)="toggleSubmenu(nav)"
+                  [ngStyle]="nav.href ? {'padding':'8.5px 24px'}:{}"
+                  [routerLink]="nav.href || null"
+                  [class.active]="activeNav() === nav"
+                >
+                  {{ nav.text }}
+                  @if (!nav.href) {
+                    <svg [icon]="'bottom-icon'" width="8" height="7" viewBox="0 0 8 7"></svg>
+                  }
+                </button>
+              </li>
+            }
+          </ul>
+        </nav>
+      }
+
+      <div
+        class="langSwitcherWrapper"
+        (mouseenter)="changeLangIconEvent.set(true)"
+        (mouseleave)="changeLangIconEvent.set(false)"
+      >
+        <a class="currentLang dropLi flex content-center justify-center items-center gap-1.5">
+          <span>EN</span>
+          <svg
+            [icon]="'bottom-icon'"
+            width="10"
+            height="8"
+            [class.rotate]="changeLangIconEvent()"
+            [ngStyle]="changeLangIconEvent() ? {'transform' : 'rotate(180deg)' } : null"
+          ></svg>
+        </a>
+        @if (changeLangIconEvent()) {
+          <ul class="langSwitcher">
+            <li>
+              <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                <div class="flex items-center gap-2">
+                  <img
+                    [src]="'/img/ru.svg'"
+                    alt="Русский flag"
+                    width="21"
+                    height="12"
+                  >
+                  <span>Русский</span>
+                </div>
+                <div class="hidden group-hover:block">
+                  <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                <div class="flex items-center gap-2">
+                  <img
+                    [src]="'/img/es.svg'"
+                    alt="Русский flag"
+                    width="21"
+                    height="12"
+                  >
+                  <span>Español</span>
+                </div>
+                <div class="hidden group-hover:block">
+                  <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                <div class="flex items-center gap-2">
+                  <img
+                    [src]="'/img/pt-br.svg'"
+                    alt="Русский flag"
+                    width="21"
+                    height="12"
+                  >
+                  <span>Português</span>
+                </div>
+                <div class="hidden group-hover:block">
+                  <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                <div class="flex items-center gap-2">
+                  <img
+                    [src]="'/img/en.svg'"
+                    alt="Русский flag"
+                    width="21"
+                    height="12"
+                  >
+                  <span>Español</span>
+                </div>
+                <div class="hidden group-hover:block">
+                  <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                </div>
+              </a>
+            </li>
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (showSubHeader()) {
+  <div
+    class="submenu textura_submenu"
+    [class.active]="showSubHeader()"
+  >
+    <div class="submenuContainer">
+      <div class="submenuList">
+        @for (item of activeNav()?.child; track item.text) {
+          <li>
+            <a [routerLink]="item.href" (click)="activeNav.set(null)">
+              {{ item.text }}
+            </a>
+          </li>
+        }
+      </div>
+      <div class="submenuArticlesWrapper">
+        @if (activeNav() === navData[nav_footer_show.Products]) {
+          <ng-content>
+            <div class="submenuArticles">
+              <div class="submenuArticle" [routerLink]="'/blog/sweepstakes-software-companies'">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'img/roulete.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>Top Sweepstakes Casino Software Development Companies for Operators in 2026</p>
+                </div>
+              </div>
+              <div class="submenuArticle" [routerLink]="'/blog/white-label-casino-solution'">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/Blog2-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="White Label Online Casino Solution for iGaming Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText"><p>White Label Online Casino Solution for iGaming Operators in 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              [routerLink]="'/contact-us'"
+              [target]="LinkTarget.Blank"
+              class="mainButton"
+            >
+              <div class="button__text mainButtonText">Let's Start</div>
+              <svg [icon]="'arrow-top-left'" height="14" width="14" viewBox="0 0 14 14" class="relative z-10"></svg>
+            </a>
+          </ng-content>
+        }
+        @if (activeNav() === navData[nav_footer_show.Solutions]) {
+          <ng-content>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/igaming_indonesia-1-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>iGaming in Indonesia 2026: Big Demand, Tough Rules</p>
+                </div>
+              </div>
+            </div>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/white_label_vs_turnkey_casino-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>White Label vs Turnkey Casino: What Operators Choose in 2026</p>
+                </div>
+              </div>
+            </div>
+            <a
+              [routerLink]="'/contact-us'"
+              [target]="LinkTarget.Blank"
+              class="mainButton"
+            >
+              <div class="button__text mainButtonText">Let's Start</div>
+              <svg [icon]="'arrow-top-left'" height="14" width="14" viewBox="0 0 14 14" class="relative z-10"></svg>
+            </a>
+          </ng-content>
+        }
+        @if (activeNav() === navData[nav_footer_show.Partners]) {
+          <ng-content>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/blog_casino_rank-1-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>The New Data Game — How Smart Platforms Are Redefining Player Retention in iGaming</p>
+                </div>
+              </div>
+            </div>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/blog_1200_600_trifecta_gaming_-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>NuxGame and Trifecta Gaming Partner to Enrich Casino Libraries With Player-First Games</p>
+                </div>
+              </div>
+            </div>
+            <a
+              [routerLink]="'/contact-us'"
+              [target]="LinkTarget.Blank"
+              class="mainButton"
+            >
+              <div class="button__text mainButtonText">Let's Start</div>
+              <svg [icon]="'arrow-top-left'" height="14" width="14" viewBox="0 0 14 14" class="relative z-10"></svg>
+            </a>
+          </ng-content>
+        }
+        @if (activeNav() === navData[nav_footer_show.Company]) {
+          <ng-content>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/casino_player_behaviour-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>Online Casino Games and Player Behavior</p>
+                </div>
+              </div>
+            </div>
+            <div class="submenuArticles">
+              <div class="submenuArticle">
+                <div class="submenuArticleImage">
+                  @if (isLoadingImg()) {
+                    <div class="flex justify-center items-center w-full h-full">
+                      <div class="loader relative z-10"></div>
+                    </div>
+                  } @else {
+                    <img
+                      [src]="'/img/slot_machine_software-300x150.webp'"
+                      (load)="onImageLoad()"
+                      [class.hidden]="isLoadingImg()"
+                      alt="Top Sweepstakes Casino Software Development Companies for Operators in 2026"
+                    >
+                  }
+                </div>
+                <div class="submenuArticleText">
+                  <p>Slot Machine Software Development Basics for iGaming Operators</p>
+                </div>
+              </div>
+            </div>
+            <a
+              [routerLink]="'/contact-us'"
+              [target]="LinkTarget.Blank"
+              class="mainButton"
+            >
+              <div class="button__text mainButtonText">Let's Start</div>
+              <svg [icon]="'arrow-top-left'" height="14" width="14" viewBox="0 0 14 14" class="relative z-10"></svg>
+            </a>
+          </ng-content>
+        }
+      </div>
+    </div>
+      <div class="submenuSocials">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com">Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com">Facebook</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com">Youtube</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com">Linkedin</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+}

@@ -1,0 +1,32 @@
+@use "tailwindcss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  --angular-custom-bg-color: #7e00e1;
+  --angular-custom-bg: #7e00e1;
+  --angular-cw-bg-color: #7e00e1;
+  --widthList: -undefinedpx;
+}
+:root {
+  --font-family-main: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-family-main);
+  background-color: #f5f5f7;
+}
+.header-active{
+  overflow: hidden !important;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}

@@ -1,0 +1,119 @@
+.mainPage .topHeader {
+  background: #e7e3f2;
+  overflow: hidden;
+}
+
+.paddingTopSection {
+  padding-top: 130px;
+  margin-top: -129px;
+}
+
+.container {
+  max-width: 1246px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container {
+  position: relative;
+  overflow: visible;
+}
+
+.topBanner {
+  @media (max-width: 1600px) {
+    gap: 0;
+    height: fit-content;
+  }
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.topBannerInfo {
+  max-width: 640px;
+  min-width: 640px;
+  min-height: 758px;
+  width: 100%;
+  padding-top: 72px;
+  position: relative;
+  z-index: 3;
+  @media (max-width: 1600px) {
+    .mainPage .topBanner .topBannerInfo {
+      min-height: auto;
+    }
+  }
+}
+
+.colLeft {
+  flex-basis: 50%;
+}
+
+.mainPageTitle {
+  @media (max-width: 1500px) {
+    font-size: 90px;
+    line-height: 80px;
+  }
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 100px;
+  margin-bottom: 30px;
+  text-transform: none;
+}
+
+.title {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  color: #440090;
+  font-size: 70px;
+  line-height: 143%;
+  margin-bottom: 50px;
+}
+
+.text-accent {
+  color: #7e00e1;
+}
+
+.sectionText, .sectionText .termsWrapper .termsInnerWrapper ul, .sectionText ol, .sectionText p, .sectionText ul, .termsWrapper .termsInnerWrapper .sectionText ul {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.topBanner .sectionText p {
+  font-size: 20px;
+}
+
+@media (max-width: 1350px) {
+  .mainPage .topBanner .topBannerVideo .gif video {
+    margin: -30px 0 0 90px;
+    max-height: 730px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .mainPage .topBanner .topBannerVideo .gif video {
+    max-height: 746px;
+  }
+}
+.mainPage .topBanner .topBannerVideo .gif video {
+  margin-top: auto;
+  max-height: calc(100dvh - 129px);
+  margin-left: 75px;
+  clip-path: fill-box;
+  overflow: hidden;
+  border-radius: .01px;
+}
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
