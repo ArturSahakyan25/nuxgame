@@ -1,20 +1,15 @@
-import { Injectable, inject, signal } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Injectable } from '@angular/core';
+import { signal, effect } from '@angular/core';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class BreakpointService {
-    private breakpointObserver = inject(BreakpointObserver);
-    readonly isMobile = signal<boolean>(false);
+    readonly isMobile = signal(window.innerWidth <= 1024);
 
     constructor() {
-        this.breakpointObserver
-            .observe(['(max-width: 1024px)'])
-            .pipe(takeUntilDestroyed())
-            .subscribe(result => {
-                this.isMobile.set(result.matches);
+        effect(() => {
+            window.addEventListener('resize', () => {
+                this.isMobile.set(window.innerWidth <= 1024);
             });
+        });
     }
 }

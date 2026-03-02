@@ -1,7 +1,7 @@
 <div class="header" xmlns="http://www.w3.org/1999/html">
     <div class="header-container">
         <div class="header-wrapper">
-            <a class="headerLogo" routerLink="/">
+            <a class="headerLogo" routerLink="/" (click)="onLogoClick()">
                 <svg [icon]="'logo'" viewBox="0 0 146 52" width="146" height="52"></svg>
             </a>
             @if (!bp.isMobile()) {
@@ -117,22 +117,50 @@
             @if (bp.isMobile()) {
                 <div class="mobileNavBtnWrapper">
                     <button
-                     class="mobileNavBtn menu-trigger"
-                     [ngClass]="showMobileMenu() ? 'active' : null"
-                     (click)="openMobileMenu()"></button>
+                            class="mobileNavBtn menu-trigger"
+                            [ngClass]="showMobileMenu() ? 'active' : null"
+                            (click)="openMobileMenu()"></button>
                 </div>
-                @if(showMobileMenu()){
+                @if (showMobileMenu()) {
                     <div class="mobileMenu">
                         <ul>
-                            @for (nm of navData;track $index){
-                                <li>
-                                    <div class="accordionHeader">{{nm.text}}</div>
+                            @for (nm of navData; track $index) {
+                                <li
+                                        (click)="toggleSubmenuMobile(nm)"
+                                        [class.active]="activeNavMobile() === nm"
+                                >
+                                    <div class="accordionHeader">
+                                        {{ nm.text }}
+                                        @if (nm.child) {
+                                            <div class="plusminus"></div>
+                                        }
+                                    </div>
+
+                                    @if (activeNavMobile() === nm) {
+                                        <div class="accordionContent">
+                                            <div class="mobileMenuListSecondary">
+                                                @for (item of nm.child; track item.text) {
+                                                    <li>
+                                                        <a
+                                                                [routerLink]="item.href"
+                                                                (click)="closeMobileMenu()"
+                                                        >
+                                                            {{ item.text }}
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+
                                 </li>
                             }
+
                         </ul>
                     </div>
                 }
             }
+
         </div>
     </div>
 </div>
