@@ -1,0 +1,240 @@
+.main_wrapper{
+  overflow-x: hidden;
+  background: #f5f5f7;
+}
+.mainPage{
+  overflow: unset;
+  position: relative;
+}
+.whyUs {
+  margin-top: 112px;
+  position: relative;
+}
+.animationsWrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.relativeWrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes orbit2 {
+  0% {
+    transform: rotate(-357deg) translateX(10px) rotate(357deg);
+  }
+  100% {
+    transform: rotate(357deg) translateX(10px) rotate(-357deg);
+  }
+}
+
+.big_triangle {
+  position: absolute;
+  top: -430px;
+  left: 0;
+  width: auto;
+  will-change: transform;
+  animation: orbit2 10s linear infinite;
+  img{
+    max-width: 100%;
+  }
+}
+
+.triangle-fade {
+  transition: opacity 3s ease-in, transform 10s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@starting-style {
+  .triangle-fade {
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+}
+.middle_triangle {
+  position: absolute;
+  top: 300px;
+  left: 150px;
+
+  animation: MoveItemsInfinite1 8s ease-in-out infinite;
+
+  img {
+    max-width: 80px;
+  }
+}
+
+.middle_triangle {
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  animation: MoveItemsInfinite1 8s ease-in-out infinite;
+
+  img {
+    max-width: 80px;
+    display: block;
+  }
+}
+
+@keyframes complexMove {
+  0% {
+    transform: translate(-10px, -10px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(10px, 10px);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(2.80616px, 2.80616px);
+  }
+  100% {
+    transform: translate(-15px, -15px);
+  }
+}
+
+.my-custom-enter {
+  animation:  cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes MoveItemsInfinite1 {
+  0%, 100% {
+    transform: translate(-15px, -15px);
+  }
+  50% {
+    transform: translate(5px, -5px);
+  }
+}
+.small_triangle {
+  position: absolute;
+  bottom: -110px;
+  right: 49px;
+
+  // Основная плавная анимация
+  // Добавляем задержку (delay), чтобы цикл не начинался, пока идет "enter"
+  animation: MoveItemsInfinite 6s ease-in-out infinite;
+
+  img {
+    max-width: 100%;
+    display: block;
+    pointer-events: none; // Чтобы не мешала кликам во время движения
+  }
+}
+
+// 1. Анимация ПОЯВЛЕНИЯ (Enter)
+@keyframes smallEnterAnim {
+  0% {
+    opacity: 0;
+    transform: translate(0, 30px); // Появление чуть снизу
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); // Заканчиваем точно в 0, откуда начнет цикл
+  }
+}
+
+.small-enter {
+  // 3 секунды на мягкое появление
+  animation: smallEnterAnim 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+  z-index: 5;
+}
+
+// 2. БЕСКОНЕЧНЫЙ ЦИКЛ
+@keyframes MoveItemsInfinite {
+  /* 0с - 1.5с: Мягко идем вниз до 10px */
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, 10px);
+  }
+
+  /* 1.5с - 3с: Возвращаемся в вашу специфическую точку */
+  50% {
+    transform: translate(0, 2.89615px);
+  }
+
+  /* 3с - 6с: ПЛАВНАЯ ПАУЗА (ждем в этой точке) */
+  100% {
+    transform: translate(0, 2.89615px);
+  }
+}
+.big_ball {
+  position: absolute;
+  bottom: -177px;
+  right: 110px;
+  animation: MoveItemsInfinite2 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+  img {
+    max-width: 40px;
+    display: block;
+  }
+}
+
+@keyframes MoveItemsInfinite2 {
+  0% {
+    transform: translate(-10px, 1.76104px);
+  }
+  25% {
+    transform: translate(10px, 1.76104px);
+  }
+  50% {
+    transform: translate(-10px, 1.76104px);
+  }
+  75% {
+    transform: translate(-7px, 8px);
+  }
+  100% {
+    transform: translate(-10px, 1.76104px);
+  }
+}
+
+/* Анимация появления в стиле Angular 21 */
+.big-ball-enter {
+  animation: ballEnter 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+@keyframes ballEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translate(-50px, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-10px, 1.76104px);
+  }
+}
+.mainWhyTitle{
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 78px;
+  text-transform: none;
+  color: rgba(0, 0, 0, .9);
+  margin-bottom: 40px;
+  max-width: fit-content;
+  font-family: Montserrat, sans-serif;
+}
+.sectionText{
+  max-width: 592px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+.mainWhySubtitle{
+  max-width: 488px;
+  font-size: 18px;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .9);
+  margin-bottom: 20px;
+  font-family: Montserrat, sans-serif;
+}
