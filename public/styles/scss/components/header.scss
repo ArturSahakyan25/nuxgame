@@ -76,6 +76,7 @@
 
     li {
       button {
+        font-family: Monospaced;
         position: relative;
         padding: 7px 24px;
         border-radius: 5px;
@@ -92,7 +93,7 @@
         line-height: 20px;
         text-transform: uppercase;
         text-decoration: none;
-        transition: all .3s ease;
+        transition: all .3s ease;;
 
         &:active {
           transform: scale(0.95);

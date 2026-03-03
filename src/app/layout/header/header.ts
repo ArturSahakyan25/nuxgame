@@ -43,11 +43,13 @@ export class Header implements OnInit {
     readonly activeNavMobile = signal<any>(null);
 
     readonly showSubHeader = computed(() => !!this.activeNav());
+
     readonly showSubHeaderMobile = computed(() => !!this.activeNavMobile());
 
     readonly showMobileMenu: WritableSignal<boolean> = signal(false);
 
     readonly changeLangIconEvent = signal(false);
+
     readonly isLoadingImg = signal(false);
 
     readonly ui = inject(UiServices);
