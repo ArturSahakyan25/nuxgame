@@ -18,6 +18,14 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "ru": "src/locale/messages.ru.xlf",
+          "es": "src/locale/messages.es.xlf",
+          "pt": "src/locale/messages.pt.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -27,10 +35,18 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "./"
               }
             ],
-            "styles": ["src/tailwind.css", "public/styles/scss/style.scss", "src/styles.scss"]
+            "styles": [
+              "src/tailwind.css",
+              "public/styles/scss/style.scss",
+              "src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
+            ]
           },
           "configurations": {
             "production": {
@@ -39,19 +55,35 @@
                   "type": "initial",
                   "maximumWarning": "500kB",
                   "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "localize": true
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "ru": {
+              "localize": [
+                "ru"
+              ]
+            },
+            "en": {
+              "localize": [
+                "en"
+              ]
+            },
+            "es": {
+              "localize": [
+                "es"
+              ]
+            },
+            "pt": {
+              "localize": [
+                "pt"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -64,12 +96,21 @@
             },
             "development": {
               "buildTarget": "Affilate-Nuxgame:build:development"
+            },
+            "ru": {
+              "buildTarget": "Affilate-Nuxgame:build:development,ru"
+            },
+            "en": {
+              "buildTarget": "Affilate-Nuxgame:build:development,en"
+            },
+            "es": {
+              "buildTarget": "Affilate-Nuxgame:build:development,es"
+            },
+            "pt": {
+              "buildTarget": "Affilate-Nuxgame:build:development,pt"
             }
           },
           "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
         }
       }
     }

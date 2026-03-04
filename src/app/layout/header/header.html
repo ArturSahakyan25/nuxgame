@@ -11,6 +11,7 @@
                             @for (nav of navData; track $index) {
                                 <li>
                                     <button
+                                            i18n
                                             (click)="toggleSubmenu(nav)"
                                             [ngStyle]="nav.href ? {'padding':'8.5px 24px'}:{}"
                                             [routerLink]="nav.href || null"
@@ -48,66 +49,37 @@
                 @if (changeLangIconEvent()) {
                     <ul class="langSwitcher">
                         <li>
-                            <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                            <a href="/ru" target="_self" class="...">
                                 <div class="flex items-center gap-2">
-                                    <img
-                                            [src]="'/img/ru.svg'"
-                                            alt="Русский flag"
-                                            width="21"
-                                            height="12"
-                                    >
-                                    <span>Русский</span>
-                                </div>
-                                <div class="hidden group-hover:block">
-                                    <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                                    <img src="/img/ru.svg" alt="RU" width="21" height="12">
+                                    <span i18n="@@langRu">Русский</span>
                                 </div>
                             </a>
                         </li>
+
                         <li>
-                            <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                            <a href="/en" target="_self" class="...">
                                 <div class="flex items-center gap-2">
-                                    <img
-                                            [src]="'/img/es.svg'"
-                                            alt="Русский flag"
-                                            width="21"
-                                            height="12"
-                                    >
-                                    <span>Español</span>
-                                </div>
-                                <div class="hidden group-hover:block">
-                                    <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                                    <img src="/img/en.svg" alt="EN" width="21" height="12">
+                                    <span i18n="@@langEn">English</span>
                                 </div>
                             </a>
                         </li>
+
                         <li>
-                            <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                            <a href="/es" target="_self" class="...">
                                 <div class="flex items-center gap-2">
-                                    <img
-                                            [src]="'/img/pt-br.svg'"
-                                            alt="Русский flag"
-                                            width="21"
-                                            height="12"
-                                    >
-                                    <span>Português</span>
-                                </div>
-                                <div class="hidden group-hover:block">
-                                    <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                                    <img src="/img/es.svg" alt="ES" width="21" height="12">
+                                    <span i18n="@@langEs">Español</span>
                                 </div>
                             </a>
                         </li>
+
                         <li>
-                            <a class="group flex items-center justify-between cursor-pointer p-2 hover:bg-gray-100">
+                            <a href="/pt" target="_self" class="...">
                                 <div class="flex items-center gap-2">
-                                    <img
-                                            [src]="'/img/en.svg'"
-                                            alt="Русский flag"
-                                            width="21"
-                                            height="12"
-                                    >
-                                    <span>Español</span>
-                                </div>
-                                <div class="hidden group-hover:block">
-                                    <svg [icon]="'right-icon'" width="16" height="14"></svg>
+                                    <img src="/img/pt-br.svg" alt="PT" width="21" height="12">
+                                    <span i18n="@@langPt">Português</span>
                                 </div>
                             </a>
                         </li>
@@ -129,7 +101,7 @@
                                         (click)="toggleSubmenuMobile(nm)"
                                         [class.active]="activeNavMobile() === nm"
                                 >
-                                    <div class="accordionHeader">
+                                    <div class="accordionHeader" i18n>
                                         {{ nm.text }}
                                         @if (nm.child) {
                                             <div class="plusminus"></div>
@@ -174,7 +146,7 @@
             <div class="submenuList">
                 @for (item of activeNav()?.child; track item.text) {
                     <li>
-                        <a [routerLink]="item.href" (click)="activeNav.set(null)">
+                        <a [routerLink]="item.href" (click)="activeNav.set(null)" i18n>
                             {{ item.text }}
                         </a>
                     </li>
@@ -218,7 +190,7 @@
                                         >
                                     }
                                 </div>
-                                <div class="submenuArticleText"><p>White Label Online Casino Solution for iGaming
+                                <div class="submenuArticleText"><p i18n>White Label Online Casino Solution for iGaming
                                     Operators in 2026</p>
                                 </div>
                             </div>
