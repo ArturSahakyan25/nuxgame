@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:netlify": "ng build --localize && cp -r dist/Affilate-Nuxgame/browser/en/img dist/Affilate-Nuxgame/browser/ && cp -r dist/Affilate-Nuxgame/browser/en/svg dist/Affilate-Nuxgame/browser/ && cp -r dist/Affilate-Nuxgame/browser/en/video dist/Affilate-Nuxgame/browser/"
+    "build:netlify": "ng build --localize && cp -r dist/Affilate-Nuxgame/browser/en/img dist/Affilate-Nuxgame/browser/ && cp -r dist/Affilate-Nuxgame/browser/en/svg dist/Affilate-Nuxgame/browser/ && cp -r dist/Affilate-Nuxgame/browser/en/video dist/Affilate-Nuxgame/browser/ && cp public/_redirects dist/Affilate-Nuxgame/browser/_redirects"
   },
   "private": true,
   "packageManager": "npm@11.4.2",
