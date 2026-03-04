@@ -289,6 +289,9 @@
   text-decoration: none;
   position: relative;
   min-width: 320px;
+  svg{
+    z-index: 11;
+  }
 
   &:before {
     content: "";
