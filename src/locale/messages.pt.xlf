@@ -2,22 +2,40 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="langRu" datatype="html">
-        <source>Русский</source>
-        <target>Russo</target>
-      </trans-unit>
-      <trans-unit id="langEs" datatype="html">
-        <source>Español</source>
-        <target>Espanhol</target>
-      </trans-unit>
-      <trans-unit id="langPt" datatype="html">
-        <source>Português</source>
-        <target>Português</target>
-      </trans-unit>
-      <trans-unit id="langEn" datatype="html">
-        <source>English</source>
-        <target>Inglês</target>
-      </trans-unit>
+      <trans-unit id="langRu" datatype="html"><source>Русский</source><target>Russo</target></trans-unit>
+      <trans-unit id="langEs" datatype="html"><source>Español</source><target>Espanhol</target></trans-unit>
+      <trans-unit id="langPt" datatype="html"><source>Português</source><target>Português</target></trans-unit>
+      <trans-unit id="langEn" datatype="html"><source>English</source><target>Inglês</target></trans-unit>
+
+      <trans-unit id="navProducts" datatype="html"><source>products</source><target>Produtos</target></trans-unit>
+      <trans-unit id="navOnlineCasino" datatype="html"><source>Online Casino</source><target>Casino Online</target></trans-unit>
+      <trans-unit id="navSportsbook" datatype="html"><source>Sportsbook</source><target>Apostas Desportivas</target></trans-unit>
+      <trans-unit id="navCryptoCasino" datatype="html"><source>Crypto Casino</source><target>Casino Cripto</target></trans-unit>
+      <trans-unit id="navAffiliate" datatype="html"><source>Affiliate System</source><target>Sistema de Afiliados</target></trans-unit>
+      <trans-unit id="navAgent" datatype="html"><source>Agent System</source><target>Sistema de Agentes</target></trans-unit>
+      <trans-unit id="navAggregator" datatype="html"><source>Game Aggregator</source><target>Agregador de Jogos</target></trans-unit>
+      <trans-unit id="navTelegram" datatype="html"><source>Telegram Casino</source><target>Casino de Telegram</target></trans-unit>
+      <trans-unit id="navSweepstakes" datatype="html"><source>Sweepstakes Casino</source><target>Casino de Sorteios</target></trans-unit>
+
+      <trans-unit id="navSolutions" datatype="html"><source>Solutions</source><target>Soluções</target></trans-unit>
+      <trans-unit id="navCasinoApi" datatype="html"><source>Casino API</source><target>API de Casino</target></trans-unit>
+      <trans-unit id="navTurnkey" datatype="html"><source>Turnkey</source><target>Solução pronta</target></trans-unit>
+      <trans-unit id="navLegal" datatype="html"><source>Legal Services</source><target>Serviços jurídicos</target></trans-unit>
+      <trans-unit id="navGamification" datatype="html"><source>Gamification &amp; Loyalty System</source><target>Gamificação e Fidelidade</target></trans-unit>
+      <trans-unit id="navBettingApi" datatype="html"><source>Betting API</source><target>API de Apostas</target></trans-unit>
+      <trans-unit id="navAmlKyc" datatype="html"><source>AML &amp; KYC</source><target>AML e KYC</target></trans-unit>
+
+      <trans-unit id="navPartnersMain" datatype="html"><source>Partners</source><target>Parceiros</target></trans-unit>
+      <trans-unit id="navGameProviders" datatype="html"><source>Game Providers</source><target>Provedores de Jogos</target></trans-unit>
+      <trans-unit id="navPartners" datatype="html"><source>Partners</source><target>Parceiros</target></trans-unit>
+
+      <trans-unit id="navCompany" datatype="html"><source>Company</source><target>Empresa</target></trans-unit>
+      <trans-unit id="navAboutUs" datatype="html"><source>about-us</source><target>Sobre nós</target></trans-unit>
+      <trans-unit id="navBlog" datatype="html"><source>Blog</source><target>Blog</target></trans-unit>
+      <trans-unit id="navEvents" datatype="html"><source>Eventos</source><target>Eventos</target></trans-unit>
+
+      <trans-unit id="navDemo" datatype="html"><source>Demo</source><target>Demo</target></trans-unit>
+      <trans-unit id="navContactUs" datatype="html"><source>Contate-nos</source><target>Contate-nos</target></trans-unit>
     </body>
   </file>
 </xliff>

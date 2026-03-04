@@ -1,106 +1,106 @@
 export const navData = [
   {
-    text: 'products',
+    text: $localize`:@@navProducts:products`,
     child:[
       {
-        text:"Online Casino",
+        text: $localize`:@@navOnlineCasino:Online Casino`,
         href:"online-casino"
       },
       {
-        text:"Sportsbook",
+        text: $localize`:@@navSportsbook:Sportsbook`,
         href:"sportsbook"
       },
       {
-        text:"Crypto Casino",
+        text: $localize`:@@navCryptoCasino:Crypto Casino`,
         href:"bitcoin-casino"
       },
       {
-        text:"Affiliate System",
+        text: $localize`:@@navAffiliate:Affiliate System`,
         href:"affiliate-system"
       },
       {
-        text:"Agent System",
+        text: $localize`:@@navAgent:Agent System`,
         href:"agent-system"
       },
       {
-        text:"Game Aggregator",
+        text: $localize`:@@navAggregator:Game Aggregator`,
         href:"casino-game-aggregation"
       },
       {
-        text:"Telegram Casino",
+        text: $localize`:@@navTelegram:Telegram Casino`,
         href:"telegram-casino"
       },
       {
-        text:"Sweepstakes Casino",
+        text: $localize`:@@navSweepstakes:Sweepstakes Casino`,
         href:"sweepstakes-casino-software"
       }
     ]
   },
   {
-    text:"Solutions",
+    text: $localize`:@@navSolutions:Solutions`,
     child:[
       {
-        text:"Casino API",
+        text: $localize`:@@navCasinoApi:Casino API`,
         href:"casino-api"
       },
       {
-        text:"Turnkey",
+        text: $localize`:@@navTurnkey:Turnkey`,
         href:"turnkey"
       },
       {
-        text:"Legal Services",
+        text: $localize`:@@navLegal:Legal Services`,
         href:"legal-services"
       },
       {
-        text:"Gamification & Loyalty System",
+        text: $localize`:@@navGamification:Gamification & Loyalty System`,
         href:"gamification-and-loyalty"
       },
       {
-        text:"Betting API",
+        text: $localize`:@@navBettingApi:Betting API`,
         href:"sports-betting-api"
       },
       {
-        text:"AML & KYC",
+        text: $localize`:@@navAmlKyc:AML & KYC`,
         href:"aml-and-kyc"
       }
     ]
   },
   {
-    text:"Partners",
+    text: $localize`:@@navPartnersMain:Partners`,
     child:[
       {
-        text: "Game Providers",
+        text: $localize`:@@navGameProviders:Game Providers`,
         href:"game-providers"
       },
       {
-        text: "Partners",
+        text: $localize`:@@navPartners:Partners`,
         href:"partners"
       }
     ]
   },
   {
-    text:"Company",
+    text: $localize`:@@navCompany:Company`,
     child:[
       {
-        text:"about-us",
+        text: $localize`:@@navAboutUs:about-us`,
         href:"about-us"
       },
       {
-        text:"Blog",
+        text: $localize`:@@navBlog:Blog`,
         href:"blog"
       },
       {
-        text:"Events",
+        text: $localize`:@@navEvents:Events`,
         href:"events"
       }
     ]
   },
   {
-    text:"Demo",
+    text: $localize`:@@navDemo:Demo`,
     href:"/demo"
   },
   {
-    text:"Contact Us",
+    text: $localize`:@@navContactUs:Contact Us`,
     href:"/contact-us"
   }
 ]
