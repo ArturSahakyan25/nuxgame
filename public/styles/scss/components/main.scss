@@ -287,6 +287,15 @@
     font-weight: 700;
     text-transform: none;
     font-family: Montserrat, sans-serif;
+    @media (max-width: 650px) {
+        max-width: 156px;
+        text-align: center;
+    }
+  }
+  @media (max-width: 650px) {
+      min-width: 143px;
+      flex-direction: column;
+      gap: 10px;
   }
 }
 .innerItem_image{
