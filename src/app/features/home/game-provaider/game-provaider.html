@@ -1,0 +1,31 @@
+<section class="partners">
+    <div class="container">
+        <div class="innerRow">
+            <h2 class="gradient">Game Providers</h2>
+            <div class="sectionText  sectionText-69a9855ee6af0" style="">
+                <p>NuxGame partners with top-tier game studios and gambling&nbsp;software providers to bring a diverse
+                    range of high-demand iGaming products. Each game provider featured is a globally recognized leader
+                    in game software development.</p>
+            </div>
+        </div>
+        <div class="partnersWrapper">
+            @for (partner of partners; track partner.link) {
+                <a [href]="'https://nuxgame.com/games/' + partner.link" target="_blank">
+                    <picture class="partnersLogoWrapper">
+                        <img
+                                [src]="baseUrl + (partner.link === 'habanero' || partner.link === 'booongo' ? '05/' : (partner.link === 'evolution-gaming' || partner.link === 'pragmatic-play' ? '04/' : '06/')) + partner.img"
+                                [alt]="partner.alt"
+                                [title]="partner.alt"
+                                loading="lazy">
+                    </picture>
+                </a>
+            }
+        </div>
+        <a [routerLink]="'/games'" class="mainButton mainButtons" [target]="LinkTarget.Self">
+            <div class="button__text text-white z-10" style="font-family: Montserrat;font-weight: 600">Load more</div>
+            <svg [icon]="'arrow-top-left'"  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            </svg>
+        </a>
+    </div>
+</section>
